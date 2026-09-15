@@ -1,17 +1,14 @@
-# 🚀 [Your Project Title Here]
-
-> ⚠️ **Replace everything in `[ ]` brackets with your actual content before submission.**
-
+# 🚀 [GridGuard Operations Control]
 ---
 
 ## 👥 Team
 
 | Field | Value |
 |---|---|
-| **Team Name** | [Your Team Name] |
-| **Track** | [AI / DevOps / Sustainability / Open] |
-| **Team Lead** | [Name] — [email@ibm.com] |
-| **Members** | [Name 1], [Name 2], [Name 3] |
+| **Team Name** | [Arcturus] |
+| **Track** | [AI] |
+| **Team Lead** | [Om patel] — [email@ibm.com] |
+| **Members** | [Gyan Patel], [Pratham Patel], [Smit Tandel] |
 
 ---
 
@@ -19,7 +16,8 @@
 
 > In 2–3 sentences: What problem does your project solve? Who experiences this problem?
 
-[Describe the real-world problem your project addresses. Be specific about who the user is and what pain point they face.]
+[During intense storm events across major utility sectors in Gujarat, grid operations desks face extreme visibility issues because live sensor data, localized weather data, and crew logs are completely split across disconnected software tools. When high-voltage infrastructure begins failing under environmental stress, control rooms lack a single unified tool to process real-time satellite captures and calculate immediate equipment threat variables. This missing link forces engineers to act blindly, extends cascade power blackout durations, and leaves emergency field teams stranded in dangerous territory without predictive route profiling.
+]
 
 ---
 
@@ -27,17 +25,21 @@
 
 > In 2–3 sentences: What did you build? How does it solve the problem above?
 
-[Describe your solution clearly. Explain the core mechanism — what makes it work.]
+[We built **GridGuard**, a high-efficiency power management web application running a Django REST Framework backend coupled to an animated Vanilla HTML/CSS/JS topological operations timeline canvas. 
+
+The core system enables operators to drag and drop raw satellite screen captures directly onto the operational interface. The Django application translates the pixel arrays using an offline machine learning logic model (`.pkl`) to extract instant regional rainfall metrics. Simultaneously, the system queries the live open-source Open-Meteo API using coordinate vectors to inject ambient environmental parameters (wind thresholds and temperatures) straight into a composite asset evaluation calculation. 
+
+This results in an instant 0–100% Outage Risk rating map accompanied by an animated vertical transit pipeline that visually guides emergency crews to high-threat grid components before cascade failures occur.]
 
 ---
 
 ## ✨ Key Features
 
-- **Feature 1:** [Brief description — e.g., "Real-time anomaly detection using watsonx.ai"]
-- **Feature 2:** [Brief description]
-- **Feature 3:** [Brief description]
-- **Feature 4:** [Optional]
-- **Feature 5:** [Optional]
+- **Satellite Image Inference:** Processes uploaded geographical weather map captures through a Python machine learning model (`.pkl`) to predict localized rainfall intensity in millimeters.
+- **Live Environmental Synthesis:** Dynamically queries the open-source Open-Meteo API using coordinate vectors to fetch real-time temperature and wind speed variables.]
+- **Proximity Fallback Routing:** Automatically calculates a distance matrix map to pull historical data from the nearest available city profile if the exact location profile doesn't exist in our JSON database.
+- **Operator Synchronization Controls:** Features a manual "Sync Now" button trigger that controls API requests, protecting the platform from network timeout rate limits during emergencies.
+- **Animated Transit Pipeline:** Replaces traditional boring table structures with an animated, glowing vertical pipeline tracking field crew hubs, target destinations, and diagnostic task details.
 
 ---
 
@@ -45,11 +47,11 @@
 
 | Category | Technologies |
 |---|---|
-| **Languages** | [e.g., Python, TypeScript] |
-| **Frameworks** | [e.g., FastAPI, React] |
-| **IBM Technologies** | [e.g., watsonx.ai, IBM Bob, IBM Cloud] |
-| **Databases** | [e.g., PostgreSQL, Redis] |
-| **Other** | [e.g., Docker, GitHub Actions] |
+| **Languages** | [Python,Javascript,HTML,CSS] |
+| **Frameworks** | [Django, Django REST Framework] |
+| **IBM Technologies** | [IBM Bob] |
+| **Databases** | [Local JSON Data Arrays] |
+| **Other** | [Joblib, Scikit-Learn, Numpy, Pandas, Pillow, Requests, django-cors-headers] |
 
 ---
 
@@ -124,6 +126,7 @@ python -m http.server 5500      if it says not fount then visit=>( http://124.0.
 
 ## 🏅 What We're Most Proud Of
 
-[Tell the judges what part of your submission is strongest and worth paying close attention to.]
+[We are super proud of how our features work together to solve real problems. Instead of just showing standard weather values, we connected a customized python machine learning model directly to a file drop container so operators can extract rainfall statistics straight out of static images. We also built a clever closest-coordinate lookup system that acts as a safety guardrail. If an asset folder is completely missing its historical data profile during a storm, our code automatically calculates the distance matrix to load information from the nearest available city so the grid monitoring panels stay online. Finally, turning off the automatic polling background timers and locking our data fetches directly to our manual 'Sync Now' click listener keeps our application highly performance-efficient and completely safe from network timeout rate limits during testing.
+]
 
 ---
