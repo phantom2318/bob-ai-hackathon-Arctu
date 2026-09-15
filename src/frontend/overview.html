@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GridGuard | Overview</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anybody:wght@600;700;800&family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&family=Chivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="app-shell">
+<aside class="sidebar" aria-label="GridGuard navigation">
+    <div class="sidebar-brand"><div class="brand-icon"><span class="pulse-node"></span></div><div><strong>GRIDGUARD</strong><span>OPERATIONS CONTROL</span></div></div>
+    <div class="sidebar-sector"><span class="sector-code">SECTOR 07</span><span class="sector-state">LIVE</span></div>
+    <nav class="sidebar-nav">
+        <a class="nav-item active" href="overview.html"><span class="nav-mark">01</span>Overview</a>
+        <a class="nav-item" href="asset-health.html"><span class="nav-mark">02</span>Asset health</a>
+        <a class="nav-item" href="weather-storm.html"><span class="nav-mark">03</span>Weather & storm</a>
+        <a class="nav-item" href="field-dispatch.html"><span class="nav-mark">04</span>Field dispatch</a>
+        <a class="nav-item" href="audit-trail.html"><span class="nav-mark">05</span>Audit trail</a>
+    </nav>
+    <div class="sidebar-footer"><span>NODE LOC-127</span><span class="sidebar-lock">SYNC LOCK</span></div>
+</aside>
+<div class="workspace">
+<header class="console-header"><div class="brand-block"><div><h1 class="brand-title">Grid telemetry / outage control</h1><p class="brand-subtitle">Predictive asset health and crew pre-positioning</p></div></div><div class="header-status"><div class="connection-badge"><span class="status-indicator" id="syncIndicator"></span><span id="syncStatus">CONNECTING...</span></div><div class="timestamp-box"><span class="label">LAST TELEMETRY</span><span class="value" id="lastUpdated">--:--:--</span></div><button id="manualRefreshBtn" class="action-btn" title="Refresh Now">SYNC NOW</button></div></header>
+<main>
+<section class="page-heading"><div><span class="eyebrow">01 / OVERVIEW</span><h2>Grid response overview</h2><p>Live operating signals across monitored equipment, weather exposure, and response readiness.</p></div><div class="heading-readout"><span>BUILD</span><strong>GRID-4.19</strong><span>MODE / LIVE DISPATCH</span></div></section>
+<section class="summary-grid" aria-label="Live operating metrics">
+<div class="metric-card"><div class="card-meta"><span class="metric-tag">TOTAL ASSETS</span><span class="metric-code">INV-01</span></div><div class="metric-body"><span class="metric-value" id="totalAssetsCount">--</span><span class="metric-unit">UNITS</span></div><div class="card-footer"><span class="card-desc">Substations & transformers monitored</span></div></div>
+<div class="metric-card alert-card"><div class="card-meta"><span class="metric-tag text-danger">HIGH RISK NODES</span><span class="metric-code text-danger">LVL-1</span></div><div class="metric-body"><span class="metric-value text-danger" id="highRiskCount">--</span><span class="metric-unit text-danger">ACTIVE</span></div><div class="card-footer"><span class="card-desc">Composite score at or above 75</span><span class="card-badge badge-high" id="highRiskRatio">--%</span></div></div>
+<div class="metric-card warning-card"><div class="card-meta"><span class="metric-tag text-warning">WEATHER EXPOSURE</span><span class="metric-code text-warning">WX-03</span></div><div class="metric-body"><span class="metric-value text-warning" id="activeWeatherWarnings">--</span><span class="metric-unit text-warning">ASSETS</span></div><div class="card-footer"><span class="card-desc">Assets in severe weather zones</span><span class="card-badge badge-warning" id="weatherStatusTag">--</span></div></div>
+</section>
+<section class="panel overview-panel"><div class="panel-header"><div class="panel-title-group"><span class="panel-index">LIVE</span><div><h2>Control room status</h2><p class="panel-sub">Use the navigation to open each operational workspace.</p></div></div></div><div class="overview-links" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px;"><a href="asset-health.html" style="display: flex; gap: 12px;"><strong>02</strong><span>Review asset health rankings</span></a><a href="weather-storm.html" style="display: flex; gap: 12px;"><strong>03</strong><span>Review weather and storm exposure</span></a><a href="field-dispatch.html" style="display: flex; gap: 12px;"><strong>04</strong><span>Open crew dispatch queue</span></a><a href="audit-trail.html" style="display: flex; gap: 12px;"><strong>05</strong><span>Inspect historical incidents</span></a></div></section>
+</main>
+<footer class="console-footer"><span>GridGuard &bull; Django REST Framework backend</span><span class="mono-text">NODE: LOC-127.0.0.1:8000</span></footer>
+</div></div>
+<script src="app.js"></script>
+</body>
+</html>

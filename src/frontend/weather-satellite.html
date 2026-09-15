@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gujarat Weather Prediction — INSAT-3D AI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/weather.css">
+</head>
+<body>
+<div class="page">
+
+    <!-- ── Header ────────────────────────────────────────── -->
+    <header class="top-bar">
+        <div class="brand">
+            <div class="brand-icon"><i class="fa-solid fa-satellite-dish"></i></div>
+            <div>
+                <h1>Gujarat Weather AI</h1>
+                <p>INSAT-3D Satellite · Scikit-Learn Random Forest</p>
+            </div>
+        </div>
+        <div class="header-badges">
+            <span class="hbadge"><i class="fa-solid fa-map-location-dot"></i> 33 Districts</span>
+            <span class="hbadge"><i class="fa-solid fa-bullseye"></i> 98.69% R²</span>
+            <span class="hbadge live-badge"><i class="fa-solid fa-circle"></i> Live AI</span>
+        </div>
+    </header>
+
+    <div class="layout">
+
+        <!-- ════════════════════════════════════════
+             SIDEBAR
+        ════════════════════════════════════════ -->
+        <aside class="sidebar">
+
+            <!-- Search -->
+            <div class="search-block">
+                <p class="section-label"><i class="fa-solid fa-location-dot"></i> Search District</p>
+                <div class="input-wrap">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input
+                        id="locationInput"
+                        type="text"
+                        placeholder="e.g. Surat, Rajkot, Vadodara…"
+                        autocomplete="off"
+                        spellcheck="false"
+                    >
+                    <button class="clear-btn" id="clearBtn" title="Clear" style="display:none">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <button class="predict-btn" id="predictBtn">
+                    <i class="fa-solid fa-bolt"></i> Predict Weather
+                </button>
+                <ul class="ac-dropdown" id="acDropdown"></ul>
+            </div>
+
+            <!-- Recent searches -->
+            <div class="recent-block" id="recentBlock" style="display:none">
+                <p class="section-label"><i class="fa-solid fa-clock-rotate-left"></i> Recent</p>
+                <div class="chip-row" id="recentChips"></div>
+            </div>
+
+            <!-- Compare -->
+            <div class="compare-block">
+                <p class="section-label">
+                    <i class="fa-solid fa-layer-group"></i> Compare
+                    <button class="add-compare-btn" id="addCompareBtn" title="Add current location">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </p>
+                <div class="chip-row" id="compareChips">
+                    <span class="empty-hint">Click <b>+</b> to add a location</span>
+                </div>
+                <button class="run-compare-btn" id="runCompareBtn" style="display:none">
+                    <i class="fa-solid fa-chart-column"></i> Compare All
+                </button>
+            </div>
+
+            <!-- District list -->
+            <div class="list-header">
+                <p class="section-label"><i class="fa-solid fa-list"></i> All Districts</p>
+                <span class="count-badge" id="districtCount">{{ locations|length }}</span>
+            </div>
+            <ul class="district-list" id="districtList">
+                {% for loc in locations %}
+                <li class="d-item" data-loc="{{ loc }}">
+                    <span class="d-dot"></span>
+                    <span class="d-name">{{ loc }}</span>
+                    <span class="d-rain" id="rain-{{ loop.index0 }}">—</span>
+                </li>
+                {% endfor %}
+            </ul>
+
+        </aside>
+
+        <!-- ════════════════════════════════════════
+             MAIN PANEL
+        ════════════════════════════════════════ -->
+        <main class="main-panel" id="mainPanel">
+
+            <!-- Loading overlay -->
+            <div class="loading-overlay" id="loadingOverlay">
+                <div class="spinner"></div>
+                <span>Fetching satellite data…</span>
+            </div>
+
+            <!-- Comparison panel -->
+            <div class="compare-panel" id="comparePanel" style="display:none">
+                <div class="compare-panel-head">
+                    <h2><i class="fa-solid fa-chart-column"></i> Comparison Results</h2>
+                    <button class="close-btn" id="closeCmpBtn"><i class="fa-solid fa-xmark"></i> Close</button>
+                </div>
+                <div class="compare-grid" id="compareGrid"></div>
+            </div>
+
+            <!-- Hero card -->
+            <div class="hero-card" id="heroCard">
+                <div class="hero-left">
+                    <div class="hero-loc" id="heroLoc">Ahmedabad</div>
+                    <div class="hero-coords" id="heroCoords">
+                        <i class="fa-solid fa-location-crosshairs"></i>
+                        <span id="coordText">23.02° N, 72.57° E</span>
+                    </div>
+                    <div class="hero-badge" id="heroBadge">—</div>
+                </div>
+                <div class="hero-right">
+                    <div class="rain-display">
+                        <span class="rain-val" id="rainVal">—</span>
+                        <span class="rain-unit">mm</span>
+                    </div>
+                    <div class="rain-sub">Predicted Rainfall</div>
+                </div>
+            </div>
+
+            <!-- Gauge -->
+            <div class="gauge-card">
+                <div class="gauge-top">
+                    <span class="gauge-lbl"><i class="fa-solid fa-droplets"></i> Rainfall Intensity</span>
+                    <span class="gauge-num" id="gaugeNum">— mm</span>
+                </div>
+                <div class="gauge-track">
+                    <div class="gauge-fill" id="gaugeFill" style="width:0%"></div>
+                </div>
+                <div class="gauge-scale">
+                    <span>None</span><span>Light</span><span>Moderate</span><span>Heavy</span><span>Severe</span>
+                </div>
+            </div>
+
+            <!-- Metric cards -->
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <i class="fa-solid fa-droplet"></i>
+                    <div class="metric-label">Rain Probability</div>
+                    <div class="metric-val" id="mProb">—</div>
+                </div>
+                <div class="metric-card">
+                    <i class="fa-solid fa-temperature-half"></i>
+                    <div class="metric-label">Temperature</div>
+                    <div class="metric-val" id="mTemp">—</div>
+                </div>
+                <div class="metric-card">
+                    <i class="fa-solid fa-wind"></i>
+                    <div class="metric-label">Wind Speed</div>
+                    <div class="metric-val" id="mWind">—</div>
+                </div>
+                <div class="metric-card">
+                    <i class="fa-solid fa-water"></i>
+                    <div class="metric-label">Humidity</div>
+                    <div class="metric-val" id="mHumidity">—</div>
+                </div>
+                <div class="metric-card">
+                    <i class="fa-solid fa-cloud"></i>
+                    <div class="metric-label">Cloud Cover</div>
+                    <div class="metric-val" id="mCloud">—</div>
+                </div>
+                <div class="metric-card">
+                    <i class="fa-solid fa-sun"></i>
+                    <div class="metric-label">UV Index</div>
+                    <div class="metric-val" id="mUV">—</div>
+                </div>
+            </div>
+
+            <!-- Advisory -->
+            <div class="advisory-box" id="advisoryBox">
+                <i class="fa-solid fa-circle-info advisory-icon" id="advisoryIcon"></i>
+                <div>
+                    <div class="advisory-title">Weather Advisory</div>
+                    <div class="advisory-body" id="advisoryBody">
+                        Select a district from the list or type in the search box and click <strong>Predict Weather</strong>.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Satellite image -->
+            <div class="sat-card">
+                <div class="sat-header">
+                    <i class="fa-solid fa-satellite"></i> Live Satellite View
+                    <span class="sat-tag" id="satTag">INSAT-3D TIR1</span>
+                </div>
+                <div class="sat-frame" id="satFrame">
+                    <img id="satImg" src="" alt="Satellite view">
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
+
+<!-- Toast notification -->
+<div class="toast" id="toast">
+    <i id="toastIcon"></i>
+    <span id="toastMsg"></span>
+</div>
+
+<!-- LOCATIONS injected by Flask/Jinja — must come before input.js -->
+<script>const LOCATIONS = {{ locations | tojson }};</script>
+<script src="/static/input.js"></script>
+</body>
+</html>

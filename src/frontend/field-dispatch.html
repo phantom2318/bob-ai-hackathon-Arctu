@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GridGuard | Field Dispatch</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@600;700;800&family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&family=Chivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ── Timeline layout ──────────────────────────────────────────────────── */
+.dispatch-pipeline {
+    position: relative;
+    padding: 8px 0 24px 0;
+}
+
+/* Animated vertical track line */
+.dispatch-pipeline::before {
+    content: "";
+    position: absolute;
+    left: 19px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        var(--navy) 8%,
+        var(--orange-bright) 40%,
+        var(--navy) 80%,
+        transparent 100%
+    );
+    background-size: 100% 300%;
+    animation: trackFlow 3s linear infinite;
+}
+
+@keyframes trackFlow {
+    0%   { background-position: 0% 0%; }
+    100% { background-position: 0% 100%; }
+}
+
+/* ── Timeline entry ───────────────────────────────────────────────────── */
+.tl-entry {
+    position: relative;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 0 14px;
+    margin-bottom: 18px;
+    opacity: 0;
+    transform: translateX(-12px);
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+.tl-entry.revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ── Node column ──────────────────────────────────────────────────────── */
+.tl-node-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3px;
+    z-index: 1;
+}
+.tl-node {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--navy);
+    background: var(--surface-lowest);
+    border-radius: 50%;
+    flex-shrink: 0;
+    z-index: 2;
+}
+.tl-node.critical { border-color: var(--red); background: var(--red-soft); }
+.tl-node.urgent   { border-color: var(--orange-bright); background: var(--orange-soft); }
+.tl-node.normal   { border-color: var(--navy); background: var(--surface-high); }
+
+/* Active pulse ripple on critical/urgent nodes */
+.tl-node.critical::after,
+.tl-node.urgent::after {
+    content: "";
+    position: absolute;
+    inset: -5px;
+    border-radius: 50%;
+    border: 2px solid currentColor;
+    opacity: 0;
+    animation: nodePulse 2s ease-out infinite;
+}
+.tl-node.critical::after { color: var(--red); }
+.tl-node.urgent::after   { color: var(--orange-bright); }
+
+@keyframes nodePulse {
+    0%   { opacity: 0.8; transform: scale(1); }
+    100% { opacity: 0;   transform: scale(1.9); }
+}
+
+/* ── Mission card ─────────────────────────────────────────────────────── */
+.tl-card {
+    background: var(--surface-lowest);
+    border: 2px solid var(--ink);
+    box-shadow: 3px 3px 0 var(--surface-dim);
+    padding: 0;
+    overflow: hidden;
+    margin-bottom: 2px;
+}
+.tl-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 9px 13px;
+    background: var(--surface-container);
+    border-bottom: 1px solid var(--outline-soft);
+}
+.tl-card-head.critical { background: var(--red-soft); border-bottom-color: var(--red); }
+.tl-card-head.urgent   { background: var(--orange-soft); border-bottom-color: var(--orange-bright); }
+
+.tl-seq {
+    font-family: var(--font-label);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+}
+.tl-asset-id {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: 0.04em;
+}
+.tl-date {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--outline);
+    white-space: nowrap;
+}
+.tl-card-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+}
+.tl-vector {
+    padding: 10px 13px;
+    border-right: 1px solid var(--outline-soft);
+}
+.tl-vector:last-child { border-right: none; }
+.tl-vector-label {
+    display: block;
+    font-family: var(--font-label);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--outline);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+.tl-vector-icon {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-right: 4px;
+    vertical-align: 1px;
+}
+.tl-vector-icon.origin  { background: var(--green); }
+.tl-vector-icon.target  { background: var(--orange-bright); }
+.tl-vector-icon.diag    { background: var(--red); }
+
+.tl-vector-value {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.35;
+}
+.tl-vector-sub {
+    display: block;
+    font-size: 10px;
+    color: var(--ink-soft);
+    margin-top: 2px;
+}
+.tl-card-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 7px 13px;
+    background: var(--surface-low);
+    border-top: 1px solid var(--outline-soft);
+}
+.tl-consumers {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--ink-soft);
+}
+.tl-consumers strong { color: var(--ink); }
+.tl-downtime {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--ink-soft);
+}
+.tl-downtime strong { color: var(--orange-bright); }
+
+/* ── Empty / loading states ───────────────────────────────────────────── */
+.tl-empty {
+    padding: 36px 16px;
+    text-align: center;
+    color: var(--ink-soft);
+    font-family: var(--font-label);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+</style>
+</head>
+
+<body>
+<div class="app-shell">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" aria-label="GridGuard navigation">
+    <div class="sidebar-brand">
+      <div class="brand-icon"><span class="pulse-node"></span></div>
+      <div><strong>GRIDGUARD</strong><span>OPERATIONS CONTROL</span></div>
+    </div>
+    <div class="sidebar-sector">
+      <span class="sector-code">SECTOR 07</span>
+      <span class="sector-state">LIVE</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="overview.html"><span class="nav-mark">01</span>Overview</a>
+      <a class="nav-item" href="asset-health.html"><span class="nav-mark">02</span>Asset health</a>
+      <a class="nav-item" href="weather-storm.html"><span class="nav-mark">03</span>Weather &amp; storm</a>
+      <a class="nav-item active" href="field-dispatch.html"><span class="nav-mark">04</span>Field dispatch</a>
+      <a class="nav-item" href="audit-trail.html"><span class="nav-mark">05</span>Audit trail</a>
+    </nav>
+    <div class="sidebar-footer">
+      <span>NODE LOC-127</span>
+      <span class="sidebar-lock">SYNC LOCK</span>
+    </div>
+  </aside>
+
+  <!-- Main workspace -->
+  <div class="workspace">
+    <header class="console-header">
+      <div class="brand-block">
+        <div>
+          <h1 class="brand-title">Grid telemetry / outage control</h1>
+          <p class="brand-subtitle">Predictive asset health and crew pre-positioning</p>
+        </div>
+      </div>
+      <div class="header-status">
+        <div class="connection-badge">
+          <span class="status-indicator" id="syncIndicator"></span>
+          <span id="syncStatus">CONNECTING...</span>
+        </div>
+        <div class="timestamp-box">
+          <span class="label">LAST TELEMETRY</span>
+          <span class="value" id="lastUpdated">--:--:--</span>
+        </div>
+        <button id="manualRefreshBtn" class="action-btn">SYNC NOW</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-heading">
+        <div>
+          <span class="eyebrow">04 / FIELD DISPATCH</span>
+          <h2>Transit pipeline</h2>
+          <p>Chronological crew deployment track — active missions, staging vectors, and diagnostic payloads.</p>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div class="panel-title-group">
+            <span class="panel-index">LIVE</span>
+            <div>
+              <h2>Mission timeline</h2>
+              <p class="panel-sub">Incident-driven dispatch queue sorted by severity and recency.</p>
+            </div>
+          </div>
+          <span class="dispatch-count" id="dispatchCount">Loading...</span>
+        </div>
+
+        <!-- Timeline container — populated entirely by renderDispatchTimeline() in app.js -->
+        <div style="padding: 16px 20px;">
+          <div class="dispatch-pipeline" id="dispatchTimeline">
+            <div class="tl-empty">Initialising transit pipeline…</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="console-footer">
+      <span>GridGuard &bull; Django REST Framework backend</span>
+      <span class="mono-text">NODE: LOC-127.0.0.1:8000</span>
+    </footer>
+  </div>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="0; url=overview.html">
+    <title>GridGuard | Outage & Asset Failure Monitor</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anybody:wght@600;700;800&family=Atkinson+Hyperlegible+Next:wght@400;500;600;700&family=Chivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar" aria-label="GridGuard navigation">
+            <div class="sidebar-brand">
+                <div class="brand-icon"><span class="pulse-node"></span></div>
+                <div>
+                    <strong>GRIDGUARD</strong>
+                    <span>OPERATIONS CONTROL</span>
+                </div>
+            </div>
+            <div class="sidebar-sector">
+                <span class="sector-code">SECTOR 07</span>
+                <span class="sector-state">LIVE</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a class="nav-item active" href="overview.html"><span class="nav-mark">01</span>Overview</a>
+                <a class="nav-item" href="asset-health.html"><span class="nav-mark">02</span>Asset health</a>
+                <a class="nav-item" href="weather-storm.html"><span class="nav-mark">03</span>Weather & storm</a>
+                <a class="nav-item" href="field-dispatch.html"><span class="nav-mark">04</span>Field dispatch</a>
+                <a class="nav-item" href="audit-trail.html"><span class="nav-mark">05</span>Audit trail</a>
+            </nav>
+            <div class="sidebar-footer">
+                <span>NODE LOC-127</span>
+                <span class="sidebar-lock">SYNC LOCK</span>
+            </div>
+        </aside>
+
+        <div class="workspace">
+            <header class="console-header">
+            <div class="brand-block">
+                <div class="brand-icon">
+                    <span class="pulse-node"></span>
+                </div>
+                <div>
+                    <h1 class="brand-title">Grid telemetry / outage control</h1>
+                    <p class="brand-subtitle">Predictive asset health and crew pre-positioning</p>
+                </div>
+            </div>
+
+            <div class="header-status">
+                <div class="connection-badge">
+                    <span class="status-indicator" id="syncIndicator"></span>
+                    <span id="syncStatus">CONNECTING...</span>
+                </div>
+                <div class="timestamp-box">
+                    <span class="label">LAST TELEMETRY</span>
+                    <span class="value" id="lastUpdated">--:--:--</span>
+                </div>
+                <button id="manualRefreshBtn" class="action-btn" title="Refresh Now">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="23 4 23 10 17 10"></polyline>
+                        <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                    </svg>
+                    <span>SYNC NOW</span>
+                </button>
+            </div>
+            </header>
+
+        <main id="overview">
+        <section class="page-heading" aria-labelledby="dashboard-heading">
+            <div>
+                <span class="eyebrow">GRID TELEMETRY / CONTROL ROOM</span>
+                <h2 id="dashboard-heading">Asset health & response matrix</h2>
+                <p>Live ranking of monitored equipment, weather exposure, and the next crew action.</p>
+            </div>
+            <div class="heading-readout"><span>BUILD</span><strong>GRID-4.19</strong><span>MODE / LIVE DISPATCH</span></div>
+        </section>
+
+        <section class="summary-grid" aria-label="Live operating metrics">
+            <div class="metric-card">
+                <div class="card-meta">
+                    <span class="metric-tag">TOTAL ASSETS</span>
+                    <span class="metric-code">INV-01</span>
+                </div>
+                <div class="metric-body">
+                    <span class="metric-value" id="totalAssetsCount">--</span>
+                    <span class="metric-unit">UNITS</span>
+                </div>
+                <div class="card-footer">
+                    <span class="card-desc">Substations & transformers monitored</span>
+                </div>
+            </div>
+
+            <div class="metric-card alert-card">
+                <div class="card-meta">
+                    <span class="metric-tag text-danger">HIGH RISK NODES</span>
+                    <span class="metric-code text-danger">LVL-1</span>
+                </div>
+                <div class="metric-body">
+                    <span class="metric-value text-danger" id="highRiskCount">--</span>
+                    <span class="metric-unit text-danger">ACTIVE</span>
+                </div>
+                <div class="card-footer">
+                    <span class="card-desc">Composite score at or above 75</span>
+                    <span class="card-badge badge-high" id="highRiskRatio">--%</span>
+                </div>
+            </div>
+
+            <div class="metric-card warning-card">
+                <div class="card-meta">
+                    <span class="metric-tag text-warning">WEATHER EXPOSURE</span>
+                    <span class="metric-code text-warning">WX-03</span>
+                </div>
+                <div class="metric-body">
+                    <span class="metric-value text-warning" id="activeWeatherWarnings">--</span>
+                    <span class="metric-unit text-warning">ZONES</span>
+                </div>
+                <div class="card-footer">
+                    <span class="card-desc">Zones affected by elevated risk</span>
+                    <span class="card-badge badge-warning" id="weatherStatusTag">ELEVATED</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Dynamic Tables Layout -->
+        <main class="dashboard-tables">
+            <section class="panel" id="asset-risk">
+                <div class="panel-header">
+                    <div class="panel-title-group">
+                            <span class="panel-index">01 / ASSET HEALTH</span>
+                        <div>
+                            <h2>Prioritized asset health</h2>
+                            <p class="panel-sub">Failure risk ranked from sensor telemetry and weather escalation.</p>
+                        </div>
+                    </div>
+                    <div class="panel-tools">
+                        <div class="search-wrap">
+                            <input type="text" id="assetSearchInput" placeholder="Filter asset / zone / cause" aria-label="Filter assets">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table class="data-table" id="assetTable">
+                        <thead>
+                            <tr>
+                                <th style="width: 70px;">ORDER</th>
+                                <th style="width: 110px;">ASSET ID</th>
+                                <th style="width: 150px;">LOCATION</th>
+                                <th>DIAGNOSTIC SIGNAL</th>
+                                <th style="width: 180px;">RISK INDEX</th>
+                                <th style="width: 110px;">STATE</th>
+                                <th style="width: 260px;">NEXT ACTION</th>
+                            </tr>
+                        </thead>
+                        <tbody id="assetTableBody">
+                            <tr>
+                                <td colspan="7" class="loading-cell">
+                                    <span class="spinner"></span> Querying backend endpoints...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="panel" id="dispatch">
+                <div class="panel-header">
+                    <div class="panel-title-group">
+                            <span class="panel-index">02 / FIELD DISPATCH</span>
+                        <div>
+                            <h2>Crew dispatch queue</h2>
+                            <p class="panel-sub">Pre-positioning directives for equipment with imminent failure exposure.</p>
+                        </div>
+                    </div>
+                    <div class="panel-tools">
+                        <span class="dispatch-count" id="dispatchCount">0 dispatches pending</span>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table class="data-table" id="dispatchTable">
+                        <thead>
+                            <tr>
+                                <th style="width: 80px;">QUEUE</th>
+                                <th style="width: 120px;">TARGET</th>
+                                <th style="width: 140px;">STAGING ZONE</th>
+                                <th style="width: 110px;">RISK INDEX</th>
+                                <th>FIELD DIRECTIVE</th>
+                                <th style="width: 120px;">STATUS</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dispatchTableBody">
+                            <tr>
+                                <td colspan="6" class="loading-cell">
+                                    <span class="spinner"></span> Loading tactical dispatch recommendations...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="panel" id="audit">
+                <div class="panel-header">
+                    <div class="panel-title-group">
+                        <span class="panel-index">03 / AUDIT TRAIL</span>
+                        <div>
+                            <h2>Historical incident log</h2>
+                            <p class="panel-sub">Recorded outages linked to monitored assets and grid impact.</p>
+                        </div>
+                    </div>
+                    <div class="panel-tools">
+                        <div class="search-wrap">
+                            <input type="text" id="incidentSearchInput" placeholder="Filter incident / asset / city" aria-label="Filter incidents">
+                        </div>
+                        <span class="dispatch-count" id="incidentCount">0 records</span>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table class="data-table audit-table" id="auditTable">
+                        <thead>
+                            <tr>
+                                <th>INCIDENT ID</th>
+                                <th>DATE</th>
+                                <th>ASSET</th>
+                                <th>LOCATION</th>
+                                <th>FAILURE TYPE</th>
+                                <th>DOWNTIME</th>
+                                <th>AFFECTED CONSUMERS</th>
+                            </tr>
+                        </thead>
+                        <tbody id="incidentTableBody">
+                            <tr>
+                                <td colspan="7" class="loading-cell"><span class="spinner"></span> Loading historical incident records...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer class="console-footer">
+            <span>GridGuard &bull; Django REST Framework backend</span>
+            <span class="mono-text">NODE: LOC-127.0.0.1:8000</span>
+            <nav class="footer-links" aria-label="Legal">
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+            </nav>
+        </footer>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
