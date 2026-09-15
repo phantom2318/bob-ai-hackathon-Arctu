@@ -12,44 +12,45 @@ team:
   name: ""                             # REQUIRED — e.g., "Orion Squad"
   track: ""                            # REQUIRED — one of: AI | DevOps | Sustainability | Open
   lead:
-    name: ""                           # REQUIRED — e.g., "Alice Chen"
+    name: "Om Ketankumar Patel"                           # REQUIRED — e.g., "Alice Chen"
     email: ""                          # REQUIRED — e.g., "alice.chen@ibm.com"
   members:
-    - name: ""                         # REQUIRED — Team member 1
+    - name: "Gyan Bharatkumar Patel"                         # REQUIRED — Team member 1
       email: ""
-    - name: ""                         # Add more members by copying the two lines above
+    - name: "Pratham Dhanshukbhai Patel"                         # Add more members by copying the two lines above
       email: ""
     - name: ""
       email: ""
 
 submission:
-  title: ""                            # REQUIRED — Project display name, e.g., "SmartOps Dashboard"
+  title: "GridGuard Operations Control"
 
-  problem_statement: >                 # REQUIRED — 1-3 sentences. What problem? Who has it?
-    Replace this text with a concise description of the real-world problem
-    your project addresses and who experiences it.
-
-  solution_summary: >                  # REQUIRED — 1-3 sentences. What did you build?
-    Replace this text with a clear description of your solution
-    and how it addresses the problem above.
-
+  problem_statement: >
+    During heavy rains and storms in Gujarat, power grid operators struggle because weather maps, asset data, and incident logs are split across totally different tools.
+    When grid equipment starts failing under stress, there is no single system that can take a live storm snapshot, read the coordinates, and warn operators which transformers are at high risk.
+    This makes maintenance teams purely reactive, causes long power outages, and delays crew deployment because dispatch logs are managed in messy, manual tables.
+  solution_summary: >
+    We built GridGuard, a web app using a Django REST Framework backend and a Vanilla HTML/CSS/JS frontend.
+    When an operator uploads a satellite image, our backend extracts the data using a Python ML model file (.pkl) to calculate rainfall intensity.
+    Then, the system calls the open-source Open-Meteo API to fetch live ambient data (like wind and temperature) using geographical coordinates.
+    It combines this with historical JSON logs to give a localized Outage Risk percentage, and maps active repair crews to dispatch to locations.
   key_features:                        # REQUIRED — List 3 to 5 specific features you implemented
-    - ""                               # e.g., "Real-time pipeline anomaly detection using watsonx.ai"
-    - ""
-    - ""
-    - ""                               # optional 4th
-    - ""                               # optional 5th
+    - "Takes a satellite image upload and runs it through a Python script using Joblib and Pillow to predict rainfall in millimeters"
+    - "Hits the open-source Open-Meteo API using coordinate inputs to pull real-time wind and temperature statistics automatically"
+    - "Calculates a localized 0-100% Outage Risk rating using weather parameters and checks historical JSON datasets for infrastructure tolerances"
+    - "Uses an algorithm that automatically triggers a closest-coordinate math loop to fallback to the nearest city's dataset if the exact location lacks an existing profile"
 
   tech_stack:
-    languages: []                      # REQUIRED — e.g., ["Python", "TypeScript"]
-    frameworks: []                     # e.g., ["FastAPI", "React"]
-    ibm_technologies: []               # e.g., ["watsonx.ai", "IBM Bob", "IBM Cloud Functions"]
-    databases: []                      # e.g., ["PostgreSQL", "Redis"]
-    other: []                          # e.g., ["Docker", "GitHub Actions", "Slack API"]
+    languages: ["Python", "JavaScript", "HTML", "CSS"]
+    frameworks: ["Django", "Django REST Framework"]
+    ibm_technologies: ["IBM Bob"]
+    databases: ["JSON Local Storage"]
+    other: ["Joblib", "Scikit-Learn", "Numpy", "Pandas", "Pillow", "GitHub Actions"]
 
   what_we_are_most_proud_of: >         # Optional but recommended — guides judges to your best work
-    Replace with what aspect of the submission you consider strongest
-    and want judges to pay special attention to.
+    We are super proud of how we handled data gaps and API rate limits. Instead of letting the application crash if an operator selects a city that isn't in our local JSON files,
+    we wrote a distance-calculation lookup loop that automatically finds and loads the nearest available city's historical infrastructure profile.
+    We also managed to isolate the frontend polling and hook it to a manual 'Sync Now' event listener. This cleanly bypassed the Open-Meteo API's strict 10-second timeout rate limits so our dashboard runs stably during testing without throwing network errors.
 
   known_limitations: >                 # Optional but recommended — be honest about gaps
     Replace with any known limitations, incomplete features,
