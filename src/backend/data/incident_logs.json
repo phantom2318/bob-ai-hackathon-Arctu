@@ -1,0 +1,102 @@
+[
+    {
+        "incident_id": "INC-552012D4",
+        "asset_id": "VDR-GRID-XFMR-02",
+        "city": "Vadodara",
+        "zone": "Central Gujarat",
+        "date": "2026-05-07",
+        "failure_type": "Lightning Strike Damage",
+        "downtime_hours": 55.2,
+        "affected_consumers": 18082
+    },
+    {
+        "incident_id": "INC-7D06CA41",
+        "asset_id": "SRT-GRID-XFMR-03",
+        "city": "Surat",
+        "zone": "South Gujarat",
+        "date": "2026-07-15",
+        "failure_type": "Lightning Strike Damage",
+        "downtime_hours": 14.4,
+        "affected_consumers": 6707
+    },
+    {
+        "incident_id": "INC-5F61CF6C",
+        "asset_id": "JND-DIST-XFMR-02",
+        "city": "Junagadh",
+        "zone": "Saurashtra",
+        "date": "2025-10-26",
+        "failure_type": "Lightning Strike Damage",
+        "downtime_hours": 42.8,
+        "affected_consumers": 9524
+    },
+    {
+        "incident_id": "INC-266BE33B",
+        "asset_id": "GDN-DIST-XFMR-01",
+        "city": "Gandhinagar",
+        "zone": "Central Gujarat",
+        "date": "2026-03-27",
+        "failure_type": "Winding Fault",
+        "downtime_hours": 31.8,
+        "affected_consumers": 35341
+    },
+    {
+        "incident_id": "INC-D23B68BF",
+        "asset_id": "AHM-DIST-XFMR-02",
+        "city": "Ahmedabad",
+        "zone": "Central Gujarat",
+        "date": "2026-03-13",
+        "failure_type": "Overheating",
+        "downtime_hours": 55.5,
+        "affected_consumers": 4075
+    },
+    {
+        "incident_id": "INC-CEDE1119",
+        "asset_id": "SRT-GRID-XFMR-02",
+        "city": "Surat",
+        "zone": "South Gujarat",
+        "date": "2026-06-12",
+        "failure_type": "Insulation Failure",
+        "downtime_hours": 13.6,
+        "affected_consumers": 42512
+    },
+    {
+        "incident_id": "INC-9147AE1D",
+        "asset_id": "JMN-DIST-XFMR-03",
+        "city": "Jamnagar",
+        "zone": "Saurashtra",
+        "date": "2026-05-05",
+        "failure_type": "Oil Leak",
+        "downtime_hours": 21.1,
+        "affected_consumers": 7602
+    },
+    {
+        "incident_id": "INC-9506F8F5",
+        "asset_id": "PLN-GRID-XFMR-01",
+        "city": "Palanpur",
+        "zone": "North Gujarat",
+        "date": "2025-10-20",
+        "failure_type": "Insulation Failure",
+        "downtime_hours": 42.9,
+        "affected_consumers": 12828
+    },
+    {
+        "incident_id": "INC-B23DF1C7",
+        "asset_id": "JMN-SUBSTATION-01",
+        "city": "Jamnagar",
+        "zone": "Saurashtra",
+        "date": "2025-12-15",
+        "failure_type": "Lightning Strike Damage",
+        "downtime_hours": 25.7,
+        "affected_consumers": 40740
+    },
+    {
+        "incident_id": "INC-C13ECF48",
+        "asset_id": "BRC-GRID-XFMR-02",
+        "city": "Bharuch",
+        "zone": "South Gujarat",
+        "date": "2025-11-21",
+        "failure_type": "Cooling System Failure",
+        "downtime_hours": 16.6,
+        "affected_consumers": 27233
+    }
+]

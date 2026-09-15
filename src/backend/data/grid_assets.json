@@ -1,0 +1,835 @@
+[
+    {
+        "asset_id": "AHM-GRID-XFMR-01",
+        "type": "transformer",
+        "city": "Ahmedabad",
+        "zone": "Central Gujarat",
+        "grid_hub": "Vadodara Grid Hub",
+        "telemetry": {
+            "temperature_c": 73.65,
+            "oil_level_percent": 85.78,
+            "grid_load_percentage": 75.0,
+            "infrastructure_age_years": 25.0,
+            "humidity_percentage": 70.36,
+            "vibration_mms": 2.2,
+            "oil_quality_score": 67.69,
+            "partial_discharge_pc": 168.34
+        }
+    },
+    {
+        "asset_id": "AHM-DIST-XFMR-02",
+        "type": "transformer",
+        "city": "Ahmedabad",
+        "zone": "Central Gujarat",
+        "grid_hub": "Vadodara Grid Hub",
+        "telemetry": {
+            "temperature_c": 71.97,
+            "oil_level_percent": 81.12,
+            "grid_load_percentage": 77.45,
+            "infrastructure_age_years": 25.0,
+            "humidity_percentage": 58.93,
+            "vibration_mms": 1.42,
+            "oil_quality_score": 69.47,
+            "partial_discharge_pc": 200.0
+        }
+    },
+    {
+        "asset_id": "AHM-DIST-XFMR-03",
+        "type": "transformer",
+        "city": "Ahmedabad",
+        "zone": "Central Gujarat",
+        "grid_hub": "Vadodara Grid Hub",
+        "telemetry": {
+            "temperature_c": 77.78,
+            "oil_level_percent": 88.36,
+            "grid_load_percentage": 86.93,
+            "infrastructure_age_years": 16.44,
+            "humidity_percentage": 61.35,
+            "vibration_mms": 1.0,
+            "oil_quality_score": 73.23,
+            "partial_discharge_pc": 139.38
+        }
+    },
+    {
+        "asset_id": "VDR-GRID-XFMR-01",
+        "type": "transformer",
+        "city": "Vadodara",
+        "zone": "Central Gujarat",
+        "grid_hub": "Vadodara Grid Hub",
+        "telemetry": {
+            "temperature_c": 69.21,
+            "oil_level_percent": 92.26,
+            "grid_load_percentage": 72.77,
+            "infrastructure_age_years": 13.03,
+            "humidity_percentage": 76.01,
+            "vibration_mms": 2.2,
+            "oil_quality_score": 86.43,
+            "partial_discharge_pc": 144.97
+        }
+    },
+    {
+        "asset_id": "VDR-GRID-XFMR-02",
+        "type": "transformer",
+        "city": "Vadodara",
+        "zone": "Central Gujarat",
+        "grid_hub": "Vadodara Grid Hub",
+        "telemetry": {
+            "temperature_c": 79.86,
+            "oil_level_percent": 83.53,
+            "grid_load_percentage": 87.81,
+            "infrastructure_age_years": 25.0,
+            "humidity_percentage": 50.95,
+            "vibration_mms": 2.2,
+            "oil_quality_score": 66.47,
+            "partial_discharge_pc": 174.52
+        }
+    },
+    {
+        "asset_id": "VDR-GRID-XFMR-03",
+        "type": "transformer",
+        "city": "Vadodara",
+        "zone": "Central Gujarat",
+        "grid_hub": "Vadodara Grid Hub",
+        "telemetry": {
+            "temperature_c": 84.55,
+            "oil_level_percent": 82.74,
+            "grid_load_percentage": 86.15,
+            "infrastructure_age_years": 20.98,
+            "humidity_percentage": 75.85,
+            "vibration_mms": 2.12,
+            "oil_quality_score": 79.23,
+            "partial_discharge_pc": 161.53
+        }
+    },
+    {
+        "asset_id": "GDN-DIST-XFMR-01",
+        "type": "transformer",
+        "city": "Gandhinagar",
+        "zone": "Central Gujarat",
+        "grid_hub": "Vadodara Grid Hub",
+        "telemetry": {
+            "temperature_c": 77.62,
+            "oil_level_percent": 78.72,
+            "grid_load_percentage": 85.21,
+            "infrastructure_age_years": 25.0,
+            "humidity_percentage": 58.95,
+            "vibration_mms": 2.2,
+            "oil_quality_score": 65.0,
+            "partial_discharge_pc": 200.0
+        }
+    },
+    {
+        "asset_id": "GDN-SUBSTATION-02",
+        "type": "transformer",
+        "city": "Gandhinagar",
+        "zone": "Central Gujarat",
+        "grid_hub": "Vadodara Grid Hub",
+        "telemetry": {
+            "temperature_c": 64.97,
+            "oil_level_percent": 87.1,
+            "grid_load_percentage": 64.65,
+            "infrastructure_age_years": 22.64,
+            "humidity_percentage": 77.82,
+            "vibration_mms": 2.2,
+            "oil_quality_score": 72.59,
+            "partial_discharge_pc": 198.62
+        }
+    },
+    {
+        "asset_id": "GDN-DIST-XFMR-03",
+        "type": "transformer",
+        "city": "Gandhinagar",
+        "zone": "Central Gujarat",
+        "grid_hub": "Vadodara Grid Hub",
+        "telemetry": {
+            "temperature_c": 81.53,
+            "oil_level_percent": 81.07,
+            "grid_load_percentage": 70.3,
+            "infrastructure_age_years": 25.0,
+            "humidity_percentage": 62.16,
+            "vibration_mms": 1.77,
+            "oil_quality_score": 65.0,
+            "partial_discharge_pc": 200.0
+        }
+    },
+    {
+        "asset_id": "AND-DIST-XFMR-01",
+        "type": "transformer",
+        "city": "Anand",
+        "zone": "Central Gujarat",
+        "grid_hub": "Vadodara Grid Hub",
+        "telemetry": {
+            "temperature_c": 82.54,
+            "oil_level_percent": 78.04,
+            "grid_load_percentage": 63.68,
+            "infrastructure_age_years": 25.0,
+            "humidity_percentage": 58.62,
+            "vibration_mms": 2.2,
+            "oil_quality_score": 65.0,
+            "partial_discharge_pc": 200.0
+        }
+    },
+    {
+        "asset_id": "AND-DIST-XFMR-02",
+        "type": "transformer",
+        "city": "Anand",
+        "zone": "Central Gujarat",
+        "grid_hub": "Vadodara Grid Hub",
+        "telemetry": {
+            "temperature_c": 88.0,
+            "oil_level_percent": 85.58,
+            "grid_load_percentage": 87.24,
+            "infrastructure_age_years": 20.19,
+            "humidity_percentage": 72.98,
+            "vibration_mms": 1.81,
+            "oil_quality_score": 72.19,
+            "partial_discharge_pc": 104.57
+        }
+    },
+    {
+        "asset_id": "AND-SUBSTATION-03",
+        "type": "transformer",
+        "city": "Anand",
+        "zone": "Central Gujarat",
+        "grid_hub": "Vadodara Grid Hub",
+        "telemetry": {
+            "temperature_c": 79.75,
+            "oil_level_percent": 84.71,
+            "grid_load_percentage": 84.98,
+            "infrastructure_age_years": 25.0,
+            "humidity_percentage": 73.37,
+            "vibration_mms": 2.2,
+            "oil_quality_score": 70.81,
+            "partial_discharge_pc": 128.55
+        }
+    },
+    {
+        "asset_id": "SRT-SUBSTATION-01",
+        "type": "transformer",
+        "city": "Surat",
+        "zone": "South Gujarat",
+        "grid_hub": "Surat Grid Hub",
+        "telemetry": {
+            "temperature_c": 81.33,
+            "oil_level_percent": 81.79,
+            "grid_load_percentage": 85.43,
+            "infrastructure_age_years": 25.0,
+            "humidity_percentage": 91.5,
+            "vibration_mms": 1.75,
+            "oil_quality_score": 65.77,
+            "partial_discharge_pc": 156.34
+        }
+    },
+    {
+        "asset_id": "SRT-GRID-XFMR-02",
+        "type": "transformer",
+        "city": "Surat",
+        "zone": "South Gujarat",
+        "grid_hub": "Surat Grid Hub",
+        "telemetry": {
+            "temperature_c": 73.72,
+            "oil_level_percent": 84.4,
+            "grid_load_percentage": 68.68,
+            "infrastructure_age_years": 18.46,
+            "humidity_percentage": 78.24,
+            "vibration_mms": 1.9,
+            "oil_quality_score": 72.45,
+            "partial_discharge_pc": 136.59
+        }
+    },
+    {
+        "asset_id": "SRT-GRID-XFMR-03",
+        "type": "transformer",
+        "city": "Surat",
+        "zone": "South Gujarat",
+        "grid_hub": "Surat Grid Hub",
+        "telemetry": {
+            "temperature_c": 77.24,
+            "oil_level_percent": 88.17,
+            "grid_load_percentage": 82.16,
+            "infrastructure_age_years": 10.76,
+            "humidity_percentage": 84.01,
+            "vibration_mms": 1.13,
+            "oil_quality_score": 88.39,
+            "partial_discharge_pc": 164.4
+        }
+    },
+    {
+        "asset_id": "NVS-SUBSTATION-01",
+        "type": "transformer",
+        "city": "Navsari",
+        "zone": "South Gujarat",
+        "grid_hub": "Surat Grid Hub",
+        "telemetry": {
+            "temperature_c": 84.32,
+            "oil_level_percent": 86.82,
+            "grid_load_percentage": 86.12,
+            "infrastructure_age_years": 20.33,
+            "humidity_percentage": 88.03,
+            "vibration_mms": 1.34,
+            "oil_quality_score": 79.61,
+            "partial_discharge_pc": 187.16
+        }
+    },
+    {
+        "asset_id": "NVS-GRID-XFMR-02",
+        "type": "transformer",
+        "city": "Navsari",
+        "zone": "South Gujarat",
+        "grid_hub": "Surat Grid Hub",
+        "telemetry": {
+            "temperature_c": 79.48,
+            "oil_level_percent": 84.67,
+            "grid_load_percentage": 95.53,
+            "infrastructure_age_years": 18.89,
+            "humidity_percentage": 84.17,
+            "vibration_mms": 1.02,
+            "oil_quality_score": 70.91,
+            "partial_discharge_pc": 200.0
+        }
+    },
+    {
+        "asset_id": "NVS-DIST-XFMR-03",
+        "type": "transformer",
+        "city": "Navsari",
+        "zone": "South Gujarat",
+        "grid_hub": "Surat Grid Hub",
+        "telemetry": {
+            "temperature_c": 76.39,
+            "oil_level_percent": 83.53,
+            "grid_load_percentage": 84.08,
+            "infrastructure_age_years": 25.0,
+            "humidity_percentage": 90.64,
+            "vibration_mms": 2.03,
+            "oil_quality_score": 65.0,
+            "partial_discharge_pc": 155.59
+        }
+    },
+    {
+        "asset_id": "VPI-DIST-XFMR-01",
+        "type": "transformer",
+        "city": "Vapi",
+        "zone": "South Gujarat",
+        "grid_hub": "Surat Grid Hub",
+        "telemetry": {
+            "temperature_c": 88.0,
+            "oil_level_percent": 92.56,
+            "grid_load_percentage": 95.45,
+            "infrastructure_age_years": 6.21,
+            "humidity_percentage": 85.1,
+            "vibration_mms": 1.33,
+            "oil_quality_score": 84.99,
+            "partial_discharge_pc": 93.24
+        }
+    },
+    {
+        "asset_id": "VPI-SUBSTATION-02",
+        "type": "transformer",
+        "city": "Vapi",
+        "zone": "South Gujarat",
+        "grid_hub": "Surat Grid Hub",
+        "telemetry": {
+            "temperature_c": 88.0,
+            "oil_level_percent": 89.35,
+            "grid_load_percentage": 94.31,
+            "infrastructure_age_years": 15.5,
+            "humidity_percentage": 71.41,
+            "vibration_mms": 1.14,
+            "oil_quality_score": 83.13,
+            "partial_discharge_pc": 109.14
+        }
+    },
+    {
+        "asset_id": "VPI-DIST-XFMR-03",
+        "type": "transformer",
+        "city": "Vapi",
+        "zone": "South Gujarat",
+        "grid_hub": "Surat Grid Hub",
+        "telemetry": {
+            "temperature_c": 78.51,
+            "oil_level_percent": 82.72,
+            "grid_load_percentage": 75.08,
+            "infrastructure_age_years": 25.0,
+            "humidity_percentage": 79.47,
+            "vibration_mms": 2.2,
+            "oil_quality_score": 66.84,
+            "partial_discharge_pc": 162.01
+        }
+    },
+    {
+        "asset_id": "BRC-DIST-XFMR-01",
+        "type": "transformer",
+        "city": "Bharuch",
+        "zone": "South Gujarat",
+        "grid_hub": "Surat Grid Hub",
+        "telemetry": {
+            "temperature_c": 76.83,
+            "oil_level_percent": 80.06,
+            "grid_load_percentage": 74.89,
+            "infrastructure_age_years": 25.0,
+            "humidity_percentage": 90.07,
+            "vibration_mms": 1.79,
+            "oil_quality_score": 65.0,
+            "partial_discharge_pc": 200.0
+        }
+    },
+    {
+        "asset_id": "BRC-GRID-XFMR-02",
+        "type": "transformer",
+        "city": "Bharuch",
+        "zone": "South Gujarat",
+        "grid_hub": "Surat Grid Hub",
+        "telemetry": {
+            "temperature_c": 87.0,
+            "oil_level_percent": 85.06,
+            "grid_load_percentage": 75.14,
+            "infrastructure_age_years": 19.83,
+            "humidity_percentage": 81.25,
+            "vibration_mms": 1.86,
+            "oil_quality_score": 72.7,
+            "partial_discharge_pc": 195.47
+        }
+    },
+    {
+        "asset_id": "BRC-GRID-XFMR-03",
+        "type": "transformer",
+        "city": "Bharuch",
+        "zone": "South Gujarat",
+        "grid_hub": "Surat Grid Hub",
+        "telemetry": {
+            "temperature_c": 88.0,
+            "oil_level_percent": 80.7,
+            "grid_load_percentage": 95.78,
+            "infrastructure_age_years": 25.0,
+            "humidity_percentage": 75.6,
+            "vibration_mms": 2.2,
+            "oil_quality_score": 65.0,
+            "partial_discharge_pc": 164.51
+        }
+    },
+    {
+        "asset_id": "RJK-SUBSTATION-01",
+        "type": "transformer",
+        "city": "Rajkot",
+        "zone": "Saurashtra",
+        "grid_hub": "Rajkot Grid Hub",
+        "telemetry": {
+            "temperature_c": 81.35,
+            "oil_level_percent": 81.52,
+            "grid_load_percentage": 85.43,
+            "infrastructure_age_years": 24.55,
+            "humidity_percentage": 44.58,
+            "vibration_mms": 2.2,
+            "oil_quality_score": 74.18,
+            "partial_discharge_pc": 200.0
+        }
+    },
+    {
+        "asset_id": "RJK-SUBSTATION-02",
+        "type": "transformer",
+        "city": "Rajkot",
+        "zone": "Saurashtra",
+        "grid_hub": "Rajkot Grid Hub",
+        "telemetry": {
+            "temperature_c": 88.0,
+            "oil_level_percent": 88.54,
+            "grid_load_percentage": 65.68,
+            "infrastructure_age_years": 17.98,
+            "humidity_percentage": 61.16,
+            "vibration_mms": 2.2,
+            "oil_quality_score": 80.18,
+            "partial_discharge_pc": 146.19
+        }
+    },
+    {
+        "asset_id": "RJK-SUBSTATION-03",
+        "type": "transformer",
+        "city": "Rajkot",
+        "zone": "Saurashtra",
+        "grid_hub": "Rajkot Grid Hub",
+        "telemetry": {
+            "temperature_c": 88.0,
+            "oil_level_percent": 88.57,
+            "grid_load_percentage": 63.32,
+            "infrastructure_age_years": 15.26,
+            "humidity_percentage": 51.8,
+            "vibration_mms": 2.17,
+            "oil_quality_score": 84.26,
+            "partial_discharge_pc": 84.97
+        }
+    },
+    {
+        "asset_id": "BHV-DIST-XFMR-01",
+        "type": "transformer",
+        "city": "Bhavnagar",
+        "zone": "Saurashtra",
+        "grid_hub": "Rajkot Grid Hub",
+        "telemetry": {
+            "temperature_c": 77.06,
+            "oil_level_percent": 94.83,
+            "grid_load_percentage": 74.0,
+            "infrastructure_age_years": 5.94,
+            "humidity_percentage": 59.62,
+            "vibration_mms": 0.97,
+            "oil_quality_score": 86.38,
+            "partial_discharge_pc": 128.77
+        }
+    },
+    {
+        "asset_id": "BHV-DIST-XFMR-02",
+        "type": "transformer",
+        "city": "Bhavnagar",
+        "zone": "Saurashtra",
+        "grid_hub": "Rajkot Grid Hub",
+        "telemetry": {
+            "temperature_c": 88.0,
+            "oil_level_percent": 90.34,
+            "grid_load_percentage": 80.59,
+            "infrastructure_age_years": 18.62,
+            "humidity_percentage": 40.95,
+            "vibration_mms": 1.96,
+            "oil_quality_score": 81.89,
+            "partial_discharge_pc": 95.29
+        }
+    },
+    {
+        "asset_id": "BHV-DIST-XFMR-03",
+        "type": "transformer",
+        "city": "Bhavnagar",
+        "zone": "Saurashtra",
+        "grid_hub": "Rajkot Grid Hub",
+        "telemetry": {
+            "temperature_c": 88.0,
+            "oil_level_percent": 86.54,
+            "grid_load_percentage": 88.63,
+            "infrastructure_age_years": 14.68,
+            "humidity_percentage": 59.59,
+            "vibration_mms": 1.29,
+            "oil_quality_score": 73.96,
+            "partial_discharge_pc": 92.98
+        }
+    },
+    {
+        "asset_id": "JMN-SUBSTATION-01",
+        "type": "transformer",
+        "city": "Jamnagar",
+        "zone": "Saurashtra",
+        "grid_hub": "Rajkot Grid Hub",
+        "telemetry": {
+            "temperature_c": 88.0,
+            "oil_level_percent": 87.82,
+            "grid_load_percentage": 81.22,
+            "infrastructure_age_years": 17.02,
+            "humidity_percentage": 49.04,
+            "vibration_mms": 1.36,
+            "oil_quality_score": 78.1,
+            "partial_discharge_pc": 195.68
+        }
+    },
+    {
+        "asset_id": "JMN-GRID-XFMR-02",
+        "type": "transformer",
+        "city": "Jamnagar",
+        "zone": "Saurashtra",
+        "grid_hub": "Rajkot Grid Hub",
+        "telemetry": {
+            "temperature_c": 88.0,
+            "oil_level_percent": 91.98,
+            "grid_load_percentage": 90.2,
+            "infrastructure_age_years": 14.36,
+            "humidity_percentage": 58.08,
+            "vibration_mms": 1.62,
+            "oil_quality_score": 80.93,
+            "partial_discharge_pc": 185.74
+        }
+    },
+    {
+        "asset_id": "JMN-DIST-XFMR-03",
+        "type": "transformer",
+        "city": "Jamnagar",
+        "zone": "Saurashtra",
+        "grid_hub": "Rajkot Grid Hub",
+        "telemetry": {
+            "temperature_c": 83.46,
+            "oil_level_percent": 81.66,
+            "grid_load_percentage": 75.51,
+            "infrastructure_age_years": 23.81,
+            "humidity_percentage": 56.64,
+            "vibration_mms": 1.47,
+            "oil_quality_score": 65.0,
+            "partial_discharge_pc": 119.66
+        }
+    },
+    {
+        "asset_id": "JND-GRID-XFMR-01",
+        "type": "transformer",
+        "city": "Junagadh",
+        "zone": "Saurashtra",
+        "grid_hub": "Rajkot Grid Hub",
+        "telemetry": {
+            "temperature_c": 88.0,
+            "oil_level_percent": 79.55,
+            "grid_load_percentage": 62.55,
+            "infrastructure_age_years": 25.0,
+            "humidity_percentage": 58.55,
+            "vibration_mms": 2.2,
+            "oil_quality_score": 65.0,
+            "partial_discharge_pc": 170.98
+        }
+    },
+    {
+        "asset_id": "JND-DIST-XFMR-02",
+        "type": "transformer",
+        "city": "Junagadh",
+        "zone": "Saurashtra",
+        "grid_hub": "Rajkot Grid Hub",
+        "telemetry": {
+            "temperature_c": 88.0,
+            "oil_level_percent": 91.58,
+            "grid_load_percentage": 64.72,
+            "infrastructure_age_years": 14.27,
+            "humidity_percentage": 38.99,
+            "vibration_mms": 0.92,
+            "oil_quality_score": 85.14,
+            "partial_discharge_pc": 146.34
+        }
+    },
+    {
+        "asset_id": "JND-DIST-XFMR-03",
+        "type": "transformer",
+        "city": "Junagadh",
+        "zone": "Saurashtra",
+        "grid_hub": "Rajkot Grid Hub",
+        "telemetry": {
+            "temperature_c": 84.16,
+            "oil_level_percent": 90.19,
+            "grid_load_percentage": 64.6,
+            "infrastructure_age_years": 14.69,
+            "humidity_percentage": 61.86,
+            "vibration_mms": 1.32,
+            "oil_quality_score": 82.87,
+            "partial_discharge_pc": 141.32
+        }
+    },
+    {
+        "asset_id": "MHS-GRID-XFMR-01",
+        "type": "transformer",
+        "city": "Mehsana",
+        "zone": "North Gujarat",
+        "grid_hub": "Mehsana Grid Hub",
+        "telemetry": {
+            "temperature_c": 62.01,
+            "oil_level_percent": 85.07,
+            "grid_load_percentage": 74.33,
+            "infrastructure_age_years": 25.0,
+            "humidity_percentage": 45.24,
+            "vibration_mms": 2.12,
+            "oil_quality_score": 65.0,
+            "partial_discharge_pc": 162.45
+        }
+    },
+    {
+        "asset_id": "MHS-GRID-XFMR-02",
+        "type": "transformer",
+        "city": "Mehsana",
+        "zone": "North Gujarat",
+        "grid_hub": "Mehsana Grid Hub",
+        "telemetry": {
+            "temperature_c": 68.73,
+            "oil_level_percent": 89.95,
+            "grid_load_percentage": 62.29,
+            "infrastructure_age_years": 10.14,
+            "humidity_percentage": 35.27,
+            "vibration_mms": 1.28,
+            "oil_quality_score": 81.15,
+            "partial_discharge_pc": 150.07
+        }
+    },
+    {
+        "asset_id": "MHS-DIST-XFMR-03",
+        "type": "transformer",
+        "city": "Mehsana",
+        "zone": "North Gujarat",
+        "grid_hub": "Mehsana Grid Hub",
+        "telemetry": {
+            "temperature_c": 73.23,
+            "oil_level_percent": 88.79,
+            "grid_load_percentage": 57.46,
+            "infrastructure_age_years": 9.8,
+            "humidity_percentage": 39.88,
+            "vibration_mms": 2.0,
+            "oil_quality_score": 84.32,
+            "partial_discharge_pc": 137.37
+        }
+    },
+    {
+        "asset_id": "PLN-GRID-XFMR-01",
+        "type": "transformer",
+        "city": "Palanpur",
+        "zone": "North Gujarat",
+        "grid_hub": "Mehsana Grid Hub",
+        "telemetry": {
+            "temperature_c": 62.49,
+            "oil_level_percent": 96.07,
+            "grid_load_percentage": 59.17,
+            "infrastructure_age_years": 6.1,
+            "humidity_percentage": 37.76,
+            "vibration_mms": 1.35,
+            "oil_quality_score": 86.55,
+            "partial_discharge_pc": 139.97
+        }
+    },
+    {
+        "asset_id": "PLN-GRID-XFMR-02",
+        "type": "transformer",
+        "city": "Palanpur",
+        "zone": "North Gujarat",
+        "grid_hub": "Mehsana Grid Hub",
+        "telemetry": {
+            "temperature_c": 70.39,
+            "oil_level_percent": 88.41,
+            "grid_load_percentage": 78.46,
+            "infrastructure_age_years": 12.89,
+            "humidity_percentage": 53.51,
+            "vibration_mms": 1.73,
+            "oil_quality_score": 77.61,
+            "partial_discharge_pc": 93.81
+        }
+    },
+    {
+        "asset_id": "PLN-SUBSTATION-03",
+        "type": "transformer",
+        "city": "Palanpur",
+        "zone": "North Gujarat",
+        "grid_hub": "Mehsana Grid Hub",
+        "telemetry": {
+            "temperature_c": 76.45,
+            "oil_level_percent": 87.05,
+            "grid_load_percentage": 60.14,
+            "infrastructure_age_years": 15.2,
+            "humidity_percentage": 43.94,
+            "vibration_mms": 1.82,
+            "oil_quality_score": 77.78,
+            "partial_discharge_pc": 156.42
+        }
+    },
+    {
+        "asset_id": "PTN-GRID-XFMR-01",
+        "type": "transformer",
+        "city": "Patan",
+        "zone": "North Gujarat",
+        "grid_hub": "Mehsana Grid Hub",
+        "telemetry": {
+            "temperature_c": 84.35,
+            "oil_level_percent": 84.79,
+            "grid_load_percentage": 64.26,
+            "infrastructure_age_years": 22.52,
+            "humidity_percentage": 58.9,
+            "vibration_mms": 2.2,
+            "oil_quality_score": 71.59,
+            "partial_discharge_pc": 112.74
+        }
+    },
+    {
+        "asset_id": "PTN-SUBSTATION-02",
+        "type": "transformer",
+        "city": "Patan",
+        "zone": "North Gujarat",
+        "grid_hub": "Mehsana Grid Hub",
+        "telemetry": {
+            "temperature_c": 84.57,
+            "oil_level_percent": 78.79,
+            "grid_load_percentage": 78.07,
+            "infrastructure_age_years": 25.0,
+            "humidity_percentage": 57.81,
+            "vibration_mms": 2.2,
+            "oil_quality_score": 65.0,
+            "partial_discharge_pc": 200.0
+        }
+    },
+    {
+        "asset_id": "PTN-SUBSTATION-03",
+        "type": "transformer",
+        "city": "Patan",
+        "zone": "North Gujarat",
+        "grid_hub": "Mehsana Grid Hub",
+        "telemetry": {
+            "temperature_c": 86.11,
+            "oil_level_percent": 91.22,
+            "grid_load_percentage": 76.51,
+            "infrastructure_age_years": 5.93,
+            "humidity_percentage": 52.36,
+            "vibration_mms": 0.66,
+            "oil_quality_score": 89.69,
+            "partial_discharge_pc": 81.4
+        }
+    },
+    {
+        "asset_id": "BHJ-SUBSTATION-01",
+        "type": "transformer",
+        "city": "Bhuj",
+        "zone": "Kutch",
+        "grid_hub": "Bhuj Grid Hub",
+        "telemetry": {
+            "temperature_c": 88.0,
+            "oil_level_percent": 78.02,
+            "grid_load_percentage": 65.05,
+            "infrastructure_age_years": 25.0,
+            "humidity_percentage": 61.33,
+            "vibration_mms": 1.98,
+            "oil_quality_score": 65.0,
+            "partial_discharge_pc": 200.0
+        }
+    },
+    {
+        "asset_id": "BHJ-DIST-XFMR-02",
+        "type": "transformer",
+        "city": "Bhuj",
+        "zone": "Kutch",
+        "grid_hub": "Bhuj Grid Hub",
+        "telemetry": {
+            "temperature_c": 88.0,
+            "oil_level_percent": 87.9,
+            "grid_load_percentage": 67.75,
+            "infrastructure_age_years": 15.47,
+            "humidity_percentage": 42.42,
+            "vibration_mms": 1.14,
+            "oil_quality_score": 73.02,
+            "partial_discharge_pc": 133.34
+        }
+    },
+    {
+        "asset_id": "GDM-GRID-XFMR-01",
+        "type": "transformer",
+        "city": "Gandhidham",
+        "zone": "Kutch",
+        "grid_hub": "Bhuj Grid Hub",
+        "telemetry": {
+            "temperature_c": 88.0,
+            "oil_level_percent": 84.5,
+            "grid_load_percentage": 91.88,
+            "infrastructure_age_years": 18.6,
+            "humidity_percentage": 47.29,
+            "vibration_mms": 1.16,
+            "oil_quality_score": 78.64,
+            "partial_discharge_pc": 95.28
+        }
+    },
+    {
+        "asset_id": "GDM-SUBSTATION-02",
+        "type": "transformer",
+        "city": "Gandhidham",
+        "zone": "Kutch",
+        "grid_hub": "Bhuj Grid Hub",
+        "telemetry": {
+            "temperature_c": 88.0,
+            "oil_level_percent": 82.45,
+            "grid_load_percentage": 93.17,
+            "infrastructure_age_years": 25.0,
+            "humidity_percentage": 39.93,
+            "vibration_mms": 1.86,
+            "oil_quality_score": 65.0,
+            "partial_discharge_pc": 200.0
+        }
+    }
+]

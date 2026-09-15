@@ -1,0 +1,57 @@
+[
+    {
+        "zone": "Central Gujarat",
+        "forecast": {
+            "ambient_temperature_c": 35.03,
+            "humidity_percentage": 77.15,
+            "wind_speed_kmh": 25.49,
+            "precipitation_mm": 2.25,
+            "storm_severity_scale": 3,
+            "condition": "Partly cloudy with occasional thundershowers"
+        }
+    },
+    {
+        "zone": "South Gujarat",
+        "forecast": {
+            "ambient_temperature_c": 27.62,
+            "humidity_percentage": 80.37,
+            "wind_speed_kmh": 27.85,
+            "precipitation_mm": 11.44,
+            "storm_severity_scale": 5,
+            "condition": "Heavy monsoon rainfall with gusty winds"
+        }
+    },
+    {
+        "zone": "Saurashtra",
+        "forecast": {
+            "ambient_temperature_c": 31.89,
+            "humidity_percentage": 56.4,
+            "wind_speed_kmh": 47.65,
+            "precipitation_mm": 11.74,
+            "storm_severity_scale": 4,
+            "condition": "Hot and dry with coastal wind surges"
+        }
+    },
+    {
+        "zone": "North Gujarat",
+        "forecast": {
+            "ambient_temperature_c": 28.44,
+            "humidity_percentage": 61.38,
+            "wind_speed_kmh": 38.81,
+            "precipitation_mm": 5.75,
+            "storm_severity_scale": 2,
+            "condition": "Clear skies with moderate temperatures"
+        }
+    },
+    {
+        "zone": "Kutch",
+        "forecast": {
+            "ambient_temperature_c": 31.87,
+            "humidity_percentage": 37.83,
+            "wind_speed_kmh": 33.28,
+            "precipitation_mm": 12.72,
+            "storm_severity_scale": 5,
+            "condition": "Extreme heat with dust storms and high winds"
+        }
+    }
+]
