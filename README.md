@@ -77,21 +77,29 @@
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/[your-repo].git
-cd [your-repo]
+git clone https://github.com/bob-ai-hackathon-Arcturus.git
+cd bob-ai-hackathon-Arcturus
 
 # 2. Install dependencies
-[your install command here]
+# Tab A: Set up and install backend python libraries
+cd src/backend
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install django djangorestframework django-cors-headers joblib scikit-learn pillow pandas requests
 
 # 3. Configure environment
-cp .env.example .env
-# Edit .env with your values
+# Copy the baseline layout settings file inside /src/
+# Windows: cp src/.env.example src/.env
+# Edit src/.env with your local values if needed
 
 # 4. Run the project
-[your run command here]
-```
+# Tab A (Backend Django Server):
+python manage.py runserver
 
----
+# Tab B (Frontend Static File Web Server - Open a new terminal tab):
+cd src/frontend
+python -m http.server 5500      if it says not fount then visit=>( http://124.0.0.1:5500/overview.html )
+
 
 ## 🖥️ Demo
 
@@ -108,9 +116,9 @@ cp .env.example .env
 
 > Be honest — judges appreciate transparency over overclaiming.
 
-- [Limitation 1: e.g., "Authentication is mocked — not production-ready"]
-- [Limitation 2: e.g., "Only tested on Chrome"]
-- [Limitation 3: e.g., "Feature X is scaffolded but not fully implemented"]
+- **Containerization:** Docker implementation was not possible within the hackathon timeline constraints, so automated container installation instructions have been removed from the setup documentation.
+- **Mobile Support:** A mobile version was not created; the dashboard is strictly optimized for desktop command centers.
+- **Live Satellite Stream:** We were unable to apply live satellite API fetching due to access token restrictions,and access to real data , so the engine relies on processing static image uploads and fallback zip bundles instead.
 
 ---
 
